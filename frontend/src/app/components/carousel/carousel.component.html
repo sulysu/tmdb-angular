@@ -1,0 +1,39 @@
+<div class="carousel-container" *ngIf="data_formatted.length > 0">
+  <div *ngIf="isMobile" class="mobile-body">
+    <div class="mobile-title">{{title}}</div>
+    <ngb-carousel *ngIf="data_formatted" [interval]="0">
+      <ng-template ngbSlide *ngFor="let img of data_formatted">
+        <a class="poster_container" [routerLink]="['/watch',img.media_type,img.id]"
+          (click)="storeOnLocalStorage(img.media_type,img.id,img.poster_path,img.title)">
+          <div class="mobile-img-body">
+            <div class="mobile-img-info" [ngStyle]="{'background-image':'url(' + img.poster_path + ')'}">
+              <div class="mobile-sub-title">
+                {{img.title}}
+              </div>
+            </div>
+          </div>
+        </a>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div *ngIf="!isMobile">
+    <h1>{{title}}</h1>
+    <ngb-carousel *ngIf="data_formatted" [interval]="0">
+      <ng-template ngbSlide *ngFor="let group of data_formatted">
+        <div class="img-fluid">
+          <div class="img-width" *ngFor="let img of group">
+            <a class="poster_container" [routerLink]="['/watch',img.media_type,img.id]"
+              (click)="storeOnLocalStorage(img.media_type,img.id,img.poster_path,img.title)">
+              <div class="img-body">
+                <div class=" img-info" [ngStyle]="{'background-image':'url(' + img.poster_path + ')'}"></div>
+                <div class="carousel-caption-area-title">
+                  {{img.title}}
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>

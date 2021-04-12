@@ -1,0 +1,71 @@
+.details-page {
+  color: white;
+}
+
+app-youtube-player {
+  
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.video {
+  flex: 2;
+  /*width: 900px*/
+  ;
+}
+
+.details {
+  align-items: center;
+  flex: 1;
+  padding-left: 3%;
+}
+
+::ng-deep iframe {
+  width: 100%;
+  min-width: 300px;
+}
+
+.tagline {
+  font-style: italic;
+  color: rgb(155 158 171)
+}
+
+.medium-text {
+  font-size: 18px;
+  color: rgb(155 158 171)
+}
+
+.small-text {
+  font-size: 15px;
+  color: rgb(155 158 171)
+}
+
+.sub-title {
+  font-size: 13px;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.medium-title {
+  font-size: 20px;
+  margin-top: 1%;
+}
+
+.btn-primary {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.info {
+  margin-left: 1%;
+}
+
+.alert{
+margin-top: 5%;
+width: 80%;
+}
+

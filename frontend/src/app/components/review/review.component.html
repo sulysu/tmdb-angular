@@ -1,0 +1,50 @@
+<h3 *ngIf="reviews" class="margin-top-20">Reviews<span class="counter">{{counter}}</span></h3>
+<div *ngIf="isMobile">
+  <div class="m-item" *ngFor="let review of reviews ">
+
+    <div class="r-image-info" [ngStyle]="{'background-image':'url(' + review.avatar_path + ')'}"></div>
+
+    <div>
+      A review created by {{review.author}}
+    </div>
+    <div>
+      <span class="r-rating">
+        &#9733;
+        <span class="rating">
+          {{review.rating}}
+        </span>
+      </span>
+    </div>
+    <div class="margin-top-20"></div>
+    <p class="card-text">Written by {{review.author}} on {{review.created_at}}</p>
+    <p class="content">{{review.content}}</p>
+    <a class="link" target="_blank" rel="noopener noreferrer" href="{{review.url}}">Read the rest</a>
+
+  </div>
+</div>
+
+<div *ngIf="!isMobile">
+  <div *ngFor="let review of reviews">
+    <div class="r-item" style="width: 100%;">
+      <div class="col-p-20">
+        <div class="g-center">
+          <div class="r-image-info" [ngStyle]="{'background-image':'url(' + review.avatar_path + ')'}"></div>
+        </div>
+      </div>
+      <div class="col1">
+        <div class="font-size-18 font-bold card-title">
+          A review created by {{review.author}}
+          <span class="r-rating">
+            &#9733;
+            <span class="rating">
+              {{review.rating}}
+            </span>
+          </span>
+        </div>
+        <p class="card-text">Written by {{review.author}} on {{review.created_at}}</p>
+        <p class="content">{{review.content}}</p>
+        <a class="link" target="_blank" rel="noopener noreferrer" href="{{review.url}}">Read the rest</a>
+      </div>
+    </div>
+  </div>
+</div>

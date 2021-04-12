@@ -1,0 +1,35 @@
+<div class="details-page">
+  <div class="top">
+    <div class="video">
+      <app-youtube-player [media_id]="media_id" [media_type]="media_type"></app-youtube-player>
+    </div>
+    <div class="details">
+
+      <h1>{{title}}</h1>
+      <p class="tagline">{{tagline}}</p>
+      <p class="medium-text">
+        <span>{{release_year}}</span>
+        <span> &nbsp;|&nbsp; &#9733;&nbsp; </span>
+        <span>{{vote_average}}</span>
+        <span> &nbsp;| &nbsp;</span>
+        <span>{{runtime}}</span>
+      </p>
+
+      <p class="sub-title">Genres:
+        <span class="small-text">{{genres}}</span>
+      </p>
+
+      <p class="sub-title">Spoken Languaes:
+        <span class="small-text">
+          {{spoken_languages}}
+        </span>
+      </p>
+      <button class="btn btn-primary" (click)="stateChnange()">{{ addState == true ? 'Remove from Watchlist' : 'Add to Watchlist' }}</button>
+      <ngb-alert class = "alert" #selfClosingAlert *ngIf = "alertState" [type]="alertState" >{{ alertMessage }}</ngb-alert>
+    </div>
+  </div>
+  <div class="info">
+    <h5 class="medium-title">Description</h5>
+    <p class="small-text">{{overview}}</p>
+  </div>
+</div>

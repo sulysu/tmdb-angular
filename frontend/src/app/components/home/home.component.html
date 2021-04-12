@@ -1,0 +1,24 @@
+<div class="main-carousel">
+  <ngb-carousel *ngIf="now_playing_formatted" [interval]="intervalTime">
+    <ng-template ngbSlide *ngFor="let img of now_playing_formatted">
+      <div class="home-carousel">
+        <a [routerLink]="['/watch/movie',img.id]" (click)="storeOnLocalStorage('movie',img.id,img.poster_path,img.title)">
+          <div class="img-fluid">
+            <img src="{{img.backdrop_path}}">
+          </div>
+          <div class="carousel-caption-area">
+            {{img.title}}
+          </div>
+        </a>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+<app-carousel [carousel_type]="'mix'" [title]=" 'Continue Watching' "></app-carousel>
+<app-carousel [carousel_type]="'normal'" [media_type]="'movie'" [url]="apiUrl+'movie/popular'" [title]=" 'Popular Movies' "></app-carousel>
+<app-carousel [carousel_type]="'normal'" [media_type]="'movie'" [url]="apiUrl+'movie/top_rated'" [title]=" 'Top Rated Movies' "></app-carousel>
+<app-carousel [carousel_type]="'normal'" [media_type]="'movie'" [url]="apiUrl+'movie/trending'" [title]="'Trending Movies'"></app-carousel>
+<app-carousel [carousel_type]="'normal'" [media_type]="'tv'" [url]="apiUrl+'tv/popular'" [title]="'Popular TV Shows'"></app-carousel>
+<app-carousel [carousel_type]="'normal'" [media_type]="'tv'" [url]="apiUrl+'tv/top_rated'" [title]="'Top Rated TV Shows'"></app-carousel>
+<app-carousel [carousel_type]="'normal'" [media_type]="'tv'" [url]="apiUrl+'tv/trending'" [title]=" 'Trending TV Shows' "></app-carousel>

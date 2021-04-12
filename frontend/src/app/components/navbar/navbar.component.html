@@ -1,0 +1,31 @@
+<header>
+  <nav *ngIf="!isMobile">
+    <span>USC Films</span>
+    <a routerLink="/">Home</a>
+    <a routerLink="/mylist">My List</a>
+    <app-search class="desktop-search"></app-search>
+  </nav>
+
+  <nav class="mobile-nav" *ngIf="isMobile">
+    <span class="mobile-title">USC Films</span>
+    <div>
+      <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+        &#9776;
+
+      </button>
+    </div>
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a id="home" class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a id="mylist" class="nav-link" routerLink="/mylist">My List</a>
+        </li>
+        <li class="nav-item">
+          <app-search class="mobile-search"></app-search>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

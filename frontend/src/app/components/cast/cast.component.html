@@ -1,0 +1,67 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{person.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="person-width">
+      <div *ngIf="person_profile" class="person-img">
+        <img src="{{person_profile}}">
+      </div>
+      <div class="person-details">
+        <p *ngIf="person.birthday">Birth: {{person.birthday}}</p>
+        <p *ngIf="person.birth_place">Birth Place: {{person.birth_place}}</p>
+        <p *ngIf="person.gender">Gender: {{person.gender}}</p>
+        <p *ngIf="person.known_for_department">Known for: {{person.known_for_department}}</p>
+        <p *ngIf="person.also_known_as">Also Known As: {{person.also_known_as}}</p>
+        <div class="social-media">
+          <span class="imdb" *ngIf="person_ids.imdb_id">
+            <a href="{{person_ids.imdb_id}}" target="_blank">
+              <i class="fab fa-imdb fa-2x"></i>
+            </a>
+          </span>
+          <span class="instagram" *ngIf="person_ids.instagram_id">
+            <a href="{{person_ids.instagram_id}}" target="_blank">
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+          </span>
+          <span class="facebook" *ngIf="person_ids.facebook_id">
+            <a href="{{person_ids.facebook_id}}" target="_blank">
+              <i class="fab fa-facebook-square fa-2x"></i>
+            </a>
+          </span>
+          <span class="twitter" *ngIf="person_ids.twitter_id">
+            <a href="{{person_ids.twitter_id}}" target="_blank">
+              <i class="fab fa-twitter fa-2x"></i>
+            </a>
+          </span>
+        </div>
+
+      </div>
+      <div *ngIf="person.biography">
+        <h4 >Biography</h4>
+        <p>{{person.biography}}</p>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<div class="cast" *ngIf= "cast_formatted">
+  <h2>Full Cast and Crew</h2>
+  <div class="d-flex flex-row flex-nowrap overflow-auto">
+    <div class="cast-item" *ngFor="let cast of cast_formatted">
+      <div class="cast-card" (click)="open(cast.id,cast.profile_path,content)">
+        <div class="card-img-top" [ngStyle]="{'background-image':'url(' + cast.profile_path + ')'}">
+          <!-- <img src={{cast.profile_path}} width="100%"> -->
+        </div>
+        <div class="card-info padding-bottom-10 padding-top-10">
+          <div class="text-center font-bold font-size-18">{{cast.name}}</div>
+          <div class="text-center font-bold font-size-18">AS</div>
+          <div class="text-center font-size-16">{{cast.character}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

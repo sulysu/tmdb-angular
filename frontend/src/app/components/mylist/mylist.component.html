@@ -1,0 +1,21 @@
+<p class="warning" *ngIf="!my_watch_list"> No items found in Watchlist.</p>
+
+<div *ngIf="my_watch_list" class="container-fluid">
+
+  <p class="title">My WatchList</p>
+  <div class="col-md-12">
+    <div class="row">
+      <div *ngFor="let img of my_watch_list" class="col-md-2">
+        <a [routerLink]="['/watch',img.media_type,img.id]"
+          (click)="storeOnLocalStorage(img.media_type,img.id,img.poster_path,img.title)">
+          <div class="img-body">
+            <div class=" img-info" [ngStyle]="{'background-image':'url(' + img.poster_path + ')'}"></div>
+            <div class="caption-area-title">
+              {{img.title}}
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

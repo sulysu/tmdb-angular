@@ -1,0 +1,12 @@
+<div class="share-container" *ngIf="facebook_share||twitter_share">
+  <h3 class="share">Share</h3>
+  <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{twitter_share}}" data-size="large"
+    target="_blank">
+    <i class="fab fa-twitter fa-2x"></i>
+  </a>
+  <a target="_blank"
+  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.youtube.com%2Fwatch?v={{facebook_share}}&amp;src=sdkpreparse"
+  class="fb-xfbml-parse-ignore">
+  <i class="fab fa-facebook-square fa-2x"></i>
+</a>
+</div>

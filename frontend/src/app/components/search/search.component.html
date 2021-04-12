@@ -1,0 +1,14 @@
+
+  <div class="form-group">
+    <ng-template #rt let-r="result" let-t="term">
+      <a [routerLink]="['/watch',r.media_type,r.id]">
+        <div>
+          <img [src]="r['backdrop_path']" class="mr-1" style="width: 3vw">
+          <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+        </div>
+      </a>
+    </ng-template>
+    <input id="typeahead-http" type="text" class="form-control mx-sm-3" [class.is-invalid]="searchFailed"
+      [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Search" [resultTemplate]="rt"
+      [inputFormatter]="formatter" />
+  </div>

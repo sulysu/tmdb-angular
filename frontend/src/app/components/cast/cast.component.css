@@ -1,0 +1,128 @@
+.cast {
+  color: black;
+}
+
+
+h2 {
+  color: white;
+  margin-top: 3%;
+}
+
+.fab {
+  margin-right: 2%;
+}
+
+.fa-imdb {
+  color: #DBA506;
+}
+
+.fa-facebook-square {
+  color: #3b5998;
+  ;
+}
+
+.fa-instagram {
+  color: #833AB4;
+}
+
+.fa-twitter {
+  color: rgb(29, 161, 242);
+}
+
+.cast-item {
+  position: relative;
+  min-width: 160px;
+  max-width: 16.66%;
+}
+
+.cast-card {
+  margin: 8px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.cast-card .card-img-top {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 350px;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.person-width {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.person-profile {
+  flex: 1;
+}
+
+.person-details {
+  padding-left: 2%;
+  flex: 1;
+}
+
+.person-details p {
+  margin-bottom: 10px;
+}
+
+::ng-deep .modal-dialog {
+  max-width: none;
+  width: 50vw;
+  margin: auto;
+  margin-top: 10vh;
+  overflow: auto;
+}
+
+@media screen and (max-width: 500px) {
+  ::ng-deep .modal-dialog {
+    max-width: none;
+    width: 100vw !important;
+    margin: auto;
+    margin-left: 2px;
+    overflow: auto;
+  }
+
+  ::ng-deep .modal-body {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+h4 {
+  margin-top: 2%;
+  color: black;
+  font-size: 24px;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.219);
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 155, 155, 0.876);
+  border-radius: 5px;
+  min-height: 1px;
+}

@@ -1,0 +1,118 @@
+.main-carousel img {
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  position: relative;
+}
+
+.main-carousel {
+  position: relative;
+  width: 80%;
+  height: 50vh;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 0%;
+}
+
+
+.main-carousel:hover img {
+  /* object-position: center;
+  object-fit: cover; */
+  transform: scale(1.01); 
+}
+
+.carousel-caption-area {
+  display: none;
+  height: 100px;
+}
+
+.main-carousel:hover .carousel-caption-area {
+  display: inherit;
+  position: absolute;
+  color: white;
+  /* background-color: black; */
+  bottom: 0;
+  width: 100%;
+  padding-top: 45px;
+  padding-left: 10px;
+  background-image: linear-gradient(to bottom, rgba(172, 133, 133, 0), rgb(00, 00, 00, 1));
+}
+
+.sub-carousel {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.sub-carousel img:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  color: white;
+}
+
+::ng-deep .carousel-control-next {
+  width: 3% !important;
+}
+
+::ng-deep .carousel-control-prev {
+  width: 2% !important;
+}
+
+:focus {
+  outline: 0 !important;
+}
+
+.img-fluid {
+  display: flex;
+  width: 100%;
+  height: 400px;
+}
+
+.img-fluid .img-width {
+  height: 100%;
+  width: 16.6%;
+}
+
+.img-info {
+  margin-left: 5px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media(max-width:760px){
+  .main-carousel {
+    position: relative;
+    width: 80%;
+    height: 25vh;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    
+  }
+  .img-fluid {
+    width: 100%;
+    height: 25vh;
+  }
+
+  ::ng-deep .carousel-indicators{
+    display: none;
+  }
+
+  .carousel-caption-area {
+    display: block;
+    position: absolute;
+    color: white;
+    /* background-color: black; */
+    bottom: 0;
+    width: 100%;
+    padding-top: 45px;
+    padding-left: 10px;
+    background-image: linear-gradient(to bottom, rgba(172, 133, 133, 0), rgb(00, 00, 00, 1));
+  }
+ 
+  .main-carousel:hover {
+    transform: scale(1.05);
+  }
+}

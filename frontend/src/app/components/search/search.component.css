@@ -1,0 +1,39 @@
+::ng-deep .form-control{
+  border-color: transparent;
+  border-radius:0;
+  border-bottom:1px white solid;
+  background-color: transparent;
+}
+
+::ng-deep .form-control:focus{
+  color: white;
+  border-color: transparent;
+  border: none;
+  border-bottom:1px white solid;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+::ng-deep .form-control::after{
+  color: white;
+  border-color: transparent;
+  border: none;
+  border-bottom:1px white solid;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+::ng-deep ngb-typeahead-window.dropdown-menu { 
+  background-color: rgba(0,0,0,0);
+  border: 0.5px white solid;
+}
+::ng-deep ngb-typeahead-window .dropdown-item {
+  background-color: rgb(5, 8, 48);
+}
+::ng-deep ngb-typeahead-window button a {
+  color: white;
+}
+::ng-deep ngb-typeahead-window button a:hover {
+  text-decoration-line: none;
+  color: white;
+}

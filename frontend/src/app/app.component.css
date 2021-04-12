@@ -1,0 +1,17 @@
+p {
+  color: white;
+}
+
+body{
+  overflow: scroll;
+}
+
+.page{
+  position: relative;
+}
+
+.page-body{
+  margin-top: 140px;
+  min-height: calc(100vh - 200px);
+  margin-bottom: 60px;
+}

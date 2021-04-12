@@ -1,0 +1,10 @@
+<div class="details-page">
+  <app-details [media_id]="media_id" [media_type]="media_type"></app-details>
+  <app-share [media_id]="media_id" [media_type]="media_type" ></app-share>
+  <app-cast [media_id]="media_id" [media_type]="media_type"></app-cast>
+  <app-review [media_id]="media_id" [media_type]="media_type"></app-review>
+</div>
+<app-carousel [title] = "'Recommended '+ header" [carousel_type]="'recommendation'" [media_id]="media_id" [media_type]="media_type"></app-carousel>
+<app-carousel [title] = "'Similar ' + header" [carousel_type]="'similar'" [media_id]="media_id" [media_type]="media_type">
+</app-carousel>
+
